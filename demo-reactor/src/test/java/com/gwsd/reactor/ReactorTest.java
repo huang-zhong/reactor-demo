@@ -13,8 +13,6 @@ public class ReactorTest {
     @Test
     public void test() {
 
-        String[] arr = {"apple", "banana", "orange"};
-
         Subscriber<String> subscriber = new Subscriber<String>() {
             private Subscription subscription;
             @Override
@@ -54,7 +52,7 @@ public class ReactorTest {
                 System.out.println("Complete");
             }
         };
-
+        String[] arr = {"apple", "banana", "orange"};
         Flux.just(arr).map(String::toUpperCase).subscribe(subscriber);
     }
 }

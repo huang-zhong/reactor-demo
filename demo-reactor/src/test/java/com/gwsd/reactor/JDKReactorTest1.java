@@ -82,7 +82,7 @@ public class JDKReactorTest1 {
         System.out.println(Thread.currentThread().getName() + " start");
         // 1. 定义发布者, 发布的数据类型是 Integer
         // 直接使用jdk自带的SubmissionPublisher
-        SubmissionPublisher<Integer> publiser = new SubmissionPublisher<Integer>();
+        SubmissionPublisher<Integer> publiser = new SubmissionPublisher<>();
         // 2. 定义处理器, 对数据进行过滤, 并转换为String类型
         MyProcessor processor = new MyProcessor();
         // 3. 发布者 和 处理器 建立订阅关系
@@ -96,7 +96,7 @@ public class JDKReactorTest1 {
         //.....
 
         // 4. 定义最终订阅者, 消费 String 类型数据
-        Subscriber<String> subscriber = new Subscriber<String>() {
+        Subscriber<String> subscriber = new Subscriber<>() {
 
             private Subscription subscription;
 
